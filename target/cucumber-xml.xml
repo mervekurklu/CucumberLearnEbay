@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="104.879">
+    <testcase classname="ebay login islemleri" name="Kullanici login olur" time="28.273">
+        <system-out>
+            <![CDATA[Given Kullanici url gider...................................................passed
+When Kullanici signin butonuna tiklar.......................................passed
+And Kullanici "email" girer ve continue tusuna basar........................passed
+And Kullanici "password" girer ve continue tusuna basarr....................passed
+Then Kullanici login oldugunu dogrular......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ebay login islemleri" name=": Kullanici login olamamalidir" time="12.967">
+        <system-out>
+            <![CDATA[Given Kullanici url gider...................................................passed
+When Kullanici signin butonuna tiklar.......................................passed
+Given Kayitli olmayan "negativeEmail1" ile giris yapamaz....................passed
+Then Kullanici login olmadigini dogrular....................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ebay login islemleri" name=": Kullanici login olamamalidir 2" time="12.927">
+        <system-out>
+            <![CDATA[Given Kullanici url gider...................................................passed
+When Kullanici signin butonuna tiklar.......................................passed
+Given Kayitli olmayan "negativeEmail2" ile giris yapamaz....................passed
+Then Kullanici login olmadigini dogrular....................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ebay login islemleri" name=": Kullanici login olamamalidir 3" time="12.802">
+        <system-out>
+            <![CDATA[Given Kullanici url gider...................................................passed
+When Kullanici signin butonuna tiklar.......................................passed
+Given Kayitli olmayan "negativeEmail3" ile giris yapamaz....................passed
+Then Kullanici login olmadigini dogrular....................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ebay product listeme islemleri" name="Apple ürünlerinin listelenmesi" time="36.865">
+        <failure message="expected:&lt;31&gt; but was:&lt;24&gt;" type="java.lang.AssertionError">
+            <![CDATA[Given Kullanici url gider...................................................passed
+When Kullanici signin butonuna tiklar.......................................passed
+And Kullanici "email" girer ve continue tusuna basar........................passed
+And Kullanici "password" girer ve continue tusuna basarr....................passed
+Given User comes to Electronics.............................................passed
+And The user clicks Apple in the pop-up window..............................passed
+And The user clicks on the Apple phones and smartphones tab from the left tab.passed
+And The user clicks on the iphone fourteen promax by swiping the upper part to the right.passed
+And Clicks one tb in the Filtering section..................................passed
+And Clicks purple as color..................................................passed
+When User verifies that the number in the result is the same as the number of output products.failed
+
+StackTrace:
+java.lang.AssertionError: expected:<31> but was:<24>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at pages.ProductsSize.resultVerifyProducts(ProductsSize.java:71)
+	at stepDefinitions.ProductStepDefinitions.userVerifiesThatTheNumberInTheResultIsTheSameAsTheNumberOfOutputProducts(ProductStepDefinitions.java:45)
+	at ✽.User verifies that the number in the result is the same as the number of output products(file:///Users/apple-pc/IdeaProjects/CucumberLearnn/src/test/resources/features/ProductApple.feature:15)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
